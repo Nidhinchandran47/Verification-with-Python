@@ -1,0 +1,28 @@
+# Ignore simulation build folder
+sim_build/
+
+# Ignore VCD (waveform) files
+*.vcd
+*.fst
+
+# Ignore Python cache
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore simulation executable and outputs
+simv
+*.out
+*.log
+*.xml
+
+# Ignore editor backups
+*~
+*.swp
+*.swo
+
+# Ignore system files
+.DS_Store
+Thumbs.db
