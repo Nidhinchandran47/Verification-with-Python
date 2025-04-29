@@ -11,7 +11,7 @@ SIM               ?= icarus
 WAVE              ?= False
 
 ifeq ($(WAVE),True)
-  DUMP_DEFINE = -D DUMP_ENABLED
+  DUMP_DEFINE = -DDUMP_ENABLED
 else
   DUMP_DEFINE =
 endif

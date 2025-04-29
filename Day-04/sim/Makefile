@@ -1,5 +1,5 @@
 # Top level settings
-FNAME             ?= d_ff
+FNAME             ?= counter
 VCD_FILE          ?= dump.vcd
 VERILOG_SOURCE     = ../rtl/$(FNAME).v
 SV_TESTBENCH       = ../verilog/$(FNAME)_tb.v
@@ -9,6 +9,8 @@ MODULE             = $(FNAME)_tb
 TOPLEVEL_LANG     ?= verilog
 SIM               ?= icarus
 WAVE              ?= False
+
+
 
 ifeq ($(WAVE),True)
   DUMP_DEFINE = -DDUMP_ENABLED
