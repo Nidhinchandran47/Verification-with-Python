@@ -9,6 +9,7 @@ MODULE             = $(FNAME)_tb
 TOPLEVEL_LANG     ?= verilog
 SIM               ?= icarus
 WAVE              ?= False
+WIDTH             ?= 4
 
 
 
@@ -39,7 +40,8 @@ cocotb:
 		TOPLEVEL=$(TOPLEVEL) \
 		MODULE=$(MODULE) \
 		VERILOG_SOURCES="$(abspath $(VERILOG_SOURCE))" \
-		COMPILE_ARGS="$(DUMP_DEFINE)"
+		PARAMETERS="$(PARAMETERS)" \
+		COMPILE_ARGS="$(DUMP_DEFINE) -P$(TOPLEVEL).WIDTH=$(WIDTH)"
 
 sv:
 	@echo "Running SystemVerilog testbench..."

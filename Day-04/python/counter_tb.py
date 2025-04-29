@@ -37,4 +37,5 @@ async def test_counter(dut):
         await RisingEdge(dut.clk)
         dut._log.info(f"count = {dut.count.value}")
     
+    dut._log.info(f"Counter width is: {dut.count.value.n_bits}")
     dut._log.info("Test Completed...")
