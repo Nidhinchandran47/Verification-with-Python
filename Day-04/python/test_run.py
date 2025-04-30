@@ -1,10 +1,10 @@
 import os
 import cocotb_test.simulator
 
-def test_d_ff():
-    verilog_sources = ["../rtl/d_ff.v"]
-
-    parameters = {}
+def test_counter():
+    verilog_sources = ["../rtl/counter.v"]
+    os.environ["WIDTH"] = "4"
+    parameters = {"WIDTH":4}
 
     extra_compile_args = []
     if os.getenv("WAVE", "0") == "1":
@@ -12,12 +12,12 @@ def test_d_ff():
 
     cocotb_test.simulator.run(
         verilog_sources=verilog_sources,
-        toplevel="d_ff", 
-        module="d_ff_tb", 
+        toplevel="counter", 
+        module="counter_tb", 
         sim_build="sim_build", 
         compile_args=extra_compile_args,
         parameters=parameters,
     )
 
 if __name__ == "__main__":
-    test_d_ff()
+    test_counter()
